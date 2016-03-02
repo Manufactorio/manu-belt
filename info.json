@@ -1,0 +1,10 @@
+{
+	"name": "manu-belt",
+	"version": "0.1.0",
+	"title": "Manufactorio Belts",
+	"author": "",
+	"dependencies": [
+		"base >= 0.0.1"
+	],
+	"description": "Belt modifications designed to make the game better."
+}
