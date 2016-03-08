@@ -38,6 +38,41 @@ local beltModifications = {
 		coefficient = 5,
 		complexity = 7,
 	},
+
+	-- 35+1 tiles long
+	{
+		distance = 35,
+		coefficient = 6,
+		complexity = 7,
+	},
+
+	-- 41+1 tiles long
+	{
+		distance = 41,
+		coefficient = 7,
+		complexity = 8,
+	},
+
+	-- 47+1 tiles long
+	{
+		distance = 47,
+		coefficient = 8,
+		complexity = 8,
+	},
+
+	-- 53+1 tiles long
+	{
+		distance = 53,
+		coefficient = 9,
+		complexity = 9,
+	},
+
+	-- 59+1 tiles long
+	{
+		distance = 59,
+		coefficient = 10,
+		complexity = 10,
+	},
 }
 
 -- Mining coefficient for time (we don't want *crazy* scaling)
@@ -144,8 +179,11 @@ local function PerformModificationOfBeltType(t, mod)
 	t.max_distance = mod.distance
 
 	-- Mining needs to be updated to reflect complexity.
+	-- We *really* don't want this
+	--[[
 	t.minable.hardness = t.minable.hardness * mod.coefficient
 	t.minable.mining_time = t.minable.mining_time * (coefficient_mining_time * mod.complexity)
+	]]
 	t.minable.result = t.name
 
 	-- todo: images
